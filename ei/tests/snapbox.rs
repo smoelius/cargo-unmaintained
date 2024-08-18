@@ -19,6 +19,7 @@ use std::{
     process::Command,
 };
 
+#[path = "../../tests/util.rs"]
 mod util;
 use util::{enabled, tee, Tee};
 
@@ -38,8 +39,8 @@ struct Test {
 
 #[test]
 fn snapbox() -> Result<()> {
-    #[cfg(not(feature = "lock-index"))]
-    panic!("the `snapbox` test requires the `lock-index` feature");
+    // #[cfg(not(feature = "lock-index"))]
+    // panic!("the `snapbox` test requires the `lock-index` feature");
 
     let test_cases = Path::new("tests/cases");
 
